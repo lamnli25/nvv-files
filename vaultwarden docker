@@ -28,7 +28,7 @@ services:
     environment:
       WEBSOCKET_ENABLED: "true"
       SIGNUPS_ALLOWED: "false"
-      ADMIN_TOKEN: "DEIN_ADMIN_TOKEN_HIER"
+      ADMIN_TOKEN: "ed301e25134f88e00e25f63f221834927b03151b451a4e433d9cfa5db607ba39"
       TZ: "Europe/Berlin"
     volumes:
       - /mnt/vaultwarden/vw-data:/data
