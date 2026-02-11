@@ -1,0 +1,33 @@
+<Configuration ID="b8cd4243-de77-4099-9f8a-eb407c6277e7">
+  <Info Description="XML für installation auf EADB-Server" />
+  <Add OfficeClientEdition="64" Channel="MonthlyEnterprise" Version="16.0.19426.20260">
+    <Product ID="O365BusinessRetail">
+      <Language ID="de-de" />
+      <ExcludeApp ID="Groove" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="OneDrive" />
+      <ExcludeApp ID="OneNote" />
+      <ExcludeApp ID="Outlook" />
+      <ExcludeApp ID="OutlookForWindows" />
+      <ExcludeApp ID="PowerPoint" />
+      <ExcludeApp ID="Publisher" />
+      <ExcludeApp ID="Teams" />
+      <ExcludeApp ID="Word" />
+    </Product>
+    <Product ID="AccessRuntimeRetail">
+      <Language ID="de-de" />
+    </Product>
+  </Add>
+  <Property Name="SharedComputerLicensing" Value="1" />
+  <Property Name="FORCEAPPSHUTDOWN" Value="TRUE" />
+  <Property Name="DeviceBasedLicensing" Value="0" />
+  <Property Name="SCLCacheOverride" Value="0" />
+  <Updates Enabled="TRUE" />
+  <AppSettings>
+    <Setup Name="Company" Value="Nordhessischer VerkehrsVerbund" />
+    <User Key="software\microsoft\office\16.0\excel\options" Name="defaultformat" Value="51" Type="REG_DWORD" App="excel16" Id="L_SaveExcelfilesas" />
+    <User Key="software\microsoft\office\16.0\powerpoint\options" Name="defaultformat" Value="27" Type="REG_DWORD" App="ppt16" Id="L_SavePowerPointfilesas" />
+    <User Key="software\microsoft\office\16.0\word\options" Name="defaultformat" Value="" Type="REG_SZ" App="word16" Id="L_SaveWordfilesas" />
+  </AppSettings>
+  <Display Level="Full" AcceptEULA="TRUE" />
+</Configuration>
