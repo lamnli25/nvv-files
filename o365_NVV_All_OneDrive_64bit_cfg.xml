@@ -1,9 +1,17 @@
-<Configuration ID="ea0b0204-744a-401d-8e40-0ac449c2d1d0">
-  <Add OfficeClientEdition="64" Channel="MonthlyEnterprise" SourcePath="\\NVV-DATEN-01\o365_installfiles_SMB" AllowCdnFallback="TRUE">
+<Configuration ID="0eb32b24-4f9a-4bf7-8efc-782c7f2929ba">
+  <Add OfficeClientEdition="64" Channel="MonthlyEnterprise">
     <Product ID="O365BusinessRetail">
       <Language ID="de-de" />
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Excel" />
       <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="OneNote" />
+      <ExcludeApp ID="Outlook" />
+      <ExcludeApp ID="OutlookForWindows" />
+      <ExcludeApp ID="PowerPoint" />
       <ExcludeApp ID="Publisher" />
+      <ExcludeApp ID="Teams" />
+      <ExcludeApp ID="Word" />
     </Product>
   </Add>
   <Property Name="SharedComputerLicensing" Value="0" />
