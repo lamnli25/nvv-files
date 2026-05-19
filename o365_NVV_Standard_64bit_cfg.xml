@@ -2,13 +2,15 @@
   <Add OfficeClientEdition="64" Channel="MonthlyEnterprise">
     <Product ID="O365BusinessRetail">
       <Language ID="de-de" />
-      <ExcludeApp ID="Groove" />
       <ExcludeApp ID="Lync" />
-      <ExcludeApp ID="Outlook" />
       <ExcludeApp ID="Publisher" />
     </Product>
   </Add>
-  <Updates Enabled="TRUE" />
+  <Property Name="SharedComputerLicensing" Value="0" />
+  <Property Name="FORCEAPPSHUTDOWN" Value="TRUE" />
+  <Property Name="DeviceBasedLicensing" Value="0" />
+  <Property Name="SCLCacheOverride" Value="0" />
+  <Updates Enabled="FALSE" />
   <RemoveMSI />
   <AppSettings>
     <Setup Name="Company" Value="NVV" />
