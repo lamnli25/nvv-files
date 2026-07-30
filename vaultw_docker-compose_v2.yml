@@ -30,7 +30,7 @@ services:
     environment:
       WEBSOCKET_ENABLED: "true"
       SIGNUPS_ALLOWED: "false"
-      ADMIN_TOKEN: "KGCh6d^WGro$yH*R@$u!@eGCWRf%ZeW@oSzW&hdY&yGLBxpZKZQV3WAY^cU6jg4!2#xTLzfz%c8%4ZpjetgH#f^Re4H9NV2#*K&2Jn$9yTb7ottGb@Z9tAihL2vYEgPs"
+      ADMIN_TOKEN: ""
       TZ: "Europe/Berlin"
       LOG_FILE: "/data/vaultwarden.log"
       LOG_LEVEL: "warn"
