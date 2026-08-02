@@ -38,13 +38,40 @@ systemctl enable docker
 
 # Festplatte vorbereiten
 
+ead -p "Festplatte eingeben (z.B. /dev/sdb): " diskk
 
+disk=/dev/$diskk
 
-mkdir -p /mnt/docker
-mount /dev/sdb1 /mnt/docker
+if [[ ! -b "$disk" ]]; then
+    echo "Fehler: $disk ist kein gültiges Blockgerät."
+    exit 1
+fi
 
+echo "ACHTUNG: Folgende Platte wird partitioniert:"
+lsblk "$disk"
 
+read -p "Fortfahren? (j/n): " confirm
 
+if [[ "$confirm" != "j" ]]; then
+    echo "Abgebrochen."
+    exit 0
+fi
+
+echo -e "g\nn\n\n\n\nw" | sudo fdisk "$disk"
+
+# Filesystem erstelln
+mkfs.ext4 /dev/"$diskk"1
+
+# Filesystem prüfen
+blkid /dev/sdb1
+
+# Eingabe des Namens vom Mountpoint
+read -p "Fortfahren mit erstellen des Mountpoints? (j/n): " confirm
+read -p "Name des Mountpunktes eingeben: " montpnt
+
+# Mountpoint erzeugen
+mkdir -p /mnt/$montpnt
+mount /dev/"$diskk"1 /mnt/$montpnt
 
 # Mount Punkt automatisch einhängen
 FSTAB="/etc/fstab"
@@ -56,3 +83,5 @@ else
     echo "$ENTRY" | sudo tee -a "$FSTAB"
     echo "Eintrag hinzugefügt."
 fi
+
+# Rechte Zuweisung
